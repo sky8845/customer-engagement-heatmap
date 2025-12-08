@@ -32,5 +32,5 @@ ax = sns.heatmap(
 
 plt.title("Customer Engagement Correlation Matrix", fontsize=16)
 
-plt.savefig("chart.png")
+plt.savefig("chart.png")  # NO bbox_inches
 plt.close()
