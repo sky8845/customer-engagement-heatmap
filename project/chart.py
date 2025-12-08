@@ -19,13 +19,8 @@ corr_matrix = data.corr()
 sns.set_style("whitegrid")
 sns.set_context("talk")
 
-# Force exact pixel dimensions for the saved image
-DESIRED_PX = 512
-# Choose a dpi; figsize (in inches) * dpi = pixels
-DPI = 64
-figsize = (DESIRED_PX / DPI, DESIRED_PX / DPI)
+plt.figure(figsize=(8, 8), dpi=64)
 
-plt.figure(figsize=figsize, dpi=DPI)
 ax = sns.heatmap(
     corr_matrix,
     annot=True,
@@ -37,6 +32,5 @@ ax = sns.heatmap(
 
 plt.title("Customer Engagement Correlation Matrix", fontsize=16)
 
-# Save without `bbox_inches='tight'` (which can change output size)
-plt.savefig("chart.png", dpi=DPI, bbox_inches=None, pad_inches=0)
+plt.savefig("chart.png")
 plt.close()
